@@ -171,7 +171,7 @@ describe("Issue create", () => {
       });
   });
 
-  it.only("Should create an issue and validate it successfully - Random Title and description", () => {
+  it("Should create an issue and validate it successfully - Random Title and description", () => {
     const randomDescr = fakerEN.lorem.text({ length: 10 });
     const randomTitle = fakerEN.lorem.word();
 
