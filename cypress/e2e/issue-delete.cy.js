@@ -4,6 +4,7 @@ const issueModal = '[data-testid="modal:issue-details"]';
 const issueList = '[data-testid="list-issue"]';
 const trashIcon = '[data-testid="icon:trash"]';
 const confirmModal = '[data-testid="modal:confirm"]';
+const closeIcon = '[data-testid="icon:close"]';
 
 describe("Issue delete", () => {
   beforeEach(() => {
@@ -49,5 +50,9 @@ describe("Issue delete", () => {
     cy.contains("Cancel").click();
 
     cy.get(confirmModal).should("not.exist");
+    cy.get(issueModal);
+    cy.get('[class="sc-dUjcNx gHqxeK"]').within(() => {
+      cy.get(closeIcon).click();
+    });
   });
 });
